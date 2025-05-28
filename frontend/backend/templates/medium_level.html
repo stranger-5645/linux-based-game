@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cyber Game - Medium Linux Challenges</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <div class="container mx-auto px-4 py-10">
+
+    <!-- Username & Challenge Completion Status -->
+    <div class="mb-10 bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h1 class="text-3xl font-bold mb-4 text-blue-400">Medium Level Challenges for <span class="text-yellow-400">{{ username }}</span></h1>
+      <ul class="list-disc pl-6 text-gray-300 space-y-1">
+        {% for challenge in challenges %}
+        <li>
+          <span class="font-semibold text-white">{{ challenge.title }}</span> - 
+          {% if challenge.id in completed %}
+            <span class="text-green-400 font-bold">✅ Completed</span>
+          {% else %}
+            <span class="text-red-500 font-bold">❌ Not Completed</span>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Intermediate Linux Skills Overview -->
+    <div class="bg-gray-800 p-6 rounded-lg mb-10 shadow-lg">
+      <h2 class="text-2xl font-semibold text-green-400 mb-4">🛡️ Level Up Your Linux Skills</h2>
+      <p class="text-gray-300 mb-4">
+        You’ve mastered the basics—now it's time to apply your skills in real-world scenarios. These medium-level challenges are designed to simulate system administration, threat hunting, and data forensics using the Linux terminal.
+      </p>
+      <p class="text-gray-300 mb-4">
+        Prepare to dig deeper into file permissions, log analysis, user management, and system monitoring. Good luck, cyber adventurer!
+      </p>
+    </div>
+
+    <!-- MEDIUM CHALLENGES -->
+    <div class="space-y-10">
+
+      <!-- Challenge 1 -->
+      <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-yellow-300 mb-2">🕵️ Challenge 1: Log Hunt</h2>
+        <p class="mb-4 text-gray-300">
+          A breach attempt has been logged in the system. You must find the log entry that matches the attack signature.
+        </p>
+        <p class="mb-4 text-sm text-blue-200">Use: <code>grep</code>, <code>less</code>, <code>cat</code></p>
+        <button onclick="window.location.href='http://localhost:4200/'" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition">Start Challenge1</button>
+      </div>
+
+      <!-- Challenge 2 -->
+      <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-yellow-300 mb-2">👥 Challenge 2: Rogue User Cleanup</h2>
+        <p class="mb-4 text-gray-300">
+          A rogue user account was added without authorization. Find and remove the account before it escalates privileges.
+        </p>
+        <p class="mb-4 text-sm text-blue-200">Use: <code>cat /etc/passwd</code>, <code>sudo userdel</code></p>
+        <button onclick="window.location.href='http://localhost:4200/'" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition">Start Challenge2</button>
+      </div>
+
+      <!-- Challenge 3 -->
+      <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-yellow-300 mb-2">🔐 Challenge 3: Permission Panic</h2>
+        <p class="mb-4 text-gray-300">
+          Sensitive files are exposed due to misconfigured permissions. Fix the access levels before data is leaked.
+        </p>
+        <p class="mb-4 text-sm text-blue-200">Use: <code>chmod</code>, <code>ls -l</code></p>
+        <button onclick="window.location.href='http://localhost:4200/'" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition">Start Challenge3</button>
+      </div>
+
+      <!-- Challenge 4 -->
+      <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-yellow-300 mb-2">📊 Challenge 4: Disk Space Dilemma</h2>
+        <p class="mb-4 text-gray-300">
+          The system is running low on space. Identify the largest directories and take corrective action.
+        </p>
+        <p class="mb-4 text-sm text-blue-200">Use: <code>du -sh *</code>, <code>df -h</code>, <code>rm</code></p>
+        <button onclick="window.location.href='http://localhost:4200/'" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition">Start Challenge4</button>
+      </div>
+
+      <!-- Challenge 5 -->
+      <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-yellow-300 mb-2">🧬 Challenge 5: Scripted Escape</h2>
+        <p class="mb-4 text-gray-300">
+          An automated script went rogue. Locate and analyze the script to neutralize the threat.
+        </p>
+        <p class="mb-4 text-sm text-blue-200">Use: <code>find</code>, <code>cat</code>, <code>bash</code></p>
+        <button onclick="window.location.href='http://localhost:4200/'" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition">Start Challenge5</button>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+</html>
